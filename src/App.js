@@ -7,9 +7,10 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Layout />} />
-        <Route index element={<Shop />} />
-        <Route path="checkout" element={<Checkout />} />
+        <Route path="/" element={<Layout />} >
+          <Route index element={<Shop />} />
+          <Route path="checkout" element={<Checkout />} />
+        </Route>
       </Routes>
     </BrowserRouter>
   );
