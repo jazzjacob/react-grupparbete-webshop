@@ -1,8 +1,10 @@
+import Shop from './components/views/Shop.js';
+
 function App() {
   return (
     <>
-      <h1>Gruppuppgift - React</h1>
-      <p>By Erik</p>
+      <p>Gruppuppgift - React</p>
+      <Shop />
     </>
   );
 }
