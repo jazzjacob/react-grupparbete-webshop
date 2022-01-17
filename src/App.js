@@ -1,9 +1,17 @@
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Checkout from "./components/Checkout";
+import Shop from "./components/Shop";
+import Layout from "./views/Layout";
+
 function App() {
   return (
-    <>
-      <h1>Gruppuppgift - React</h1>
-      <p>By Erik</p>
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout />} />
+        <Route index element={<Shop />} />
+        <Route path="checkout" element={<Checkout />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
