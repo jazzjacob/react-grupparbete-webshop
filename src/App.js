@@ -1,6 +1,9 @@
 function App() {
   return (
-    <h1>Gruppuppgift - React</h1>
+    <>
+      <h1>Gruppuppgift - React</h1>
+      <p>By Erik</p>
+    </>
   );
 }
 
