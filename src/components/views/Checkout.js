@@ -5,14 +5,21 @@ import { UserContext } from '../../context/UserContext';
 
 const Checkout = () => {
 
-  const { loggedIn, setLoggedIn, skipLogin, setSkipLogin } = useContext(UserContext);
+  const {
+    loggedIn,
+    setLoggedIn,
+    skippedLogin,
+    setSkippedLogin
+  } = useContext(UserContext);
+
   console.log(loggedIn);
-  console.log(skipLogin);
+  console.log(skippedLogin);
 
   return (
     <>
       <h1>This is the Checkout page</h1>
-      {loggedIn || skipLogin ? <ShippingForm /> : <LoginForm />}
+      <h3>Här nånstans borde varukorg synas</h3>
+      {loggedIn || skippedLogin ? <ShippingForm /> : <LoginForm />}
     </>
   );
 };
