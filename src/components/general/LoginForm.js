@@ -1,4 +1,9 @@
+import { UserContext } from '../../context/UserContext';
+import { useContext } from 'react';
+
 const LoginForm = () => {
+
+  const { setLoggedIn, setSkippedLogin } = useContext(UserContext);
 
   const skipLoginButtonStyle = {
     height: '30px',
@@ -26,10 +31,12 @@ const LoginForm = () => {
 
   const logIn = () => {
     alert('You are logged in');
+    setLoggedIn(true);
   }
 
   const skipLogin = () => {
     alert('You will order without logging in');
+    setSkippedLogin(true);
   }
 
   return (
