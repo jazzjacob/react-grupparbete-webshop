@@ -2,10 +2,14 @@ import { UserContext } from '../../context/UserContext';
 import { useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import userInfoService from '../../services/userInfoService';
+import Cart from './Cart';
+import { CartContext } from '../../context/CartContext';
 
 const ShippingForm = () => {
   
   const currentUser = userInfoService;
+
+  const { Cart, setCart} = useContext(CartContext);
 
   const [orderMade, setOrderMade] = useState(false);
   const { loggedIn } = useContext(UserContext);
@@ -42,6 +46,7 @@ const ShippingForm = () => {
     e.preventDefault();
     alert(JSON.stringify(shippingInfo));
     setOrderMade(true);
+    setCart([]);
   }
 
   const handleInput = (e) => {
