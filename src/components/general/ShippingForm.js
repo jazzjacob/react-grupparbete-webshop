@@ -1,17 +1,21 @@
 import { UserContext } from '../../context/UserContext';
 import { useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import userInfoService from '../../services/userInfoService';
 
 const ShippingForm = () => {
+  
+  const currentUser = userInfoService;
 
   const [orderMade, setOrderMade] = useState(false);
+  const { loggedIn } = useContext(UserContext);
   const [shippingInfo, setShippingInfo] = useState({
-    firstName: '',
-    lastName: '',
-    phone: '',
-    address: '',
-    postcode: '',
-    town: '',
+    firstName: loggedIn ? currentUser.firstName : '',
+    lastName: loggedIn ? currentUser.lastName : '',
+    phone: loggedIn ? currentUser.phone : '',
+    address: loggedIn ? currentUser.address : '',
+    postcode: loggedIn ? currentUser.postcode : '',
+    town: loggedIn ? currentUser.town : '',
   });
 
   const navigate = useNavigate();
@@ -44,6 +48,7 @@ const ShippingForm = () => {
     setShippingInfo({...shippingInfo, [e.target.name]: e.target.value});
   }
   console.log(shippingInfo);
+  
 
   return (
     <>
@@ -55,38 +60,49 @@ const ShippingForm = () => {
          <input
            name='firstName'
            style={formInputStyle}
-           onChange={handleInput} />
+           onChange={handleInput}
+           value={shippingInfo.firstName}/>
    
          <label>Last name</label>
          <input
            name='lastName'
            style={formInputStyle}
-           onChange={handleInput} />
+           onChange={handleInput}
+           value={shippingInfo.lastName}
+          />
    
          <label>Phone number</label>
          <input
            name='phone'
            style={formInputStyle}
            onChange={handleInput}
-           type='phone'/>
+           type='phone'
+           value={shippingInfo.phone}
+          />
    
          <label>Address</label>
          <input
            name='address'
            style={formInputStyle}
-           onChange={handleInput} />
+           onChange={handleInput}
+           value={shippingInfo.address}
+         />
    
          <label>Postcode</label>
          <input
            name='postcode'
            style={formInputStyle}
-           onChange={handleInput}/>
+           onChange={handleInput}
+           value={shippingInfo.postcode}
+          />
    
          <label>Town/City</label>
          <input
            name='town'
            style={formInputStyle}
-           onChange={handleInput} />
+           onChange={handleInput}
+           value={shippingInfo.town}
+          />
    
          <button style={formButtonStyle}>Order</button>
        </form>
