@@ -1,7 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Checkout from "./components/views/Checkout";
 import Shop from "./components/views/Shop";
-import Layout from "./views/Layout";
+import Layout from "./components/views/Layout";
 
 function App() {
   return (
