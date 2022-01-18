@@ -41,7 +41,6 @@ const LoginForm = () => {
 
   return (
     <>
-      <h3>Här nånstans borde varukorg synas</h3>
       <form style={formStyle} onSubmit={logIn}>
         <p>This is the login form</p>
         <label>Email</label>
