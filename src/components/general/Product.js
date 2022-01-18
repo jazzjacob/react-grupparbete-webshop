@@ -17,6 +17,7 @@ const Product = () => {
 
   const productStyle = {
     border: "1px solid black",
+    textAlign: 'center',
     marginBottom: "5px",
     width: "200px"
   }
@@ -25,7 +26,7 @@ const Product = () => {
     <>
       <p>This is a product</p>
       {products.map((prod, index) =>
-        <div key={index} style={productStyle}>
+        <div  key={index} style={productStyle}>
           <p>{prod.name}: {prod.price} kr</p>
           <button onClick={() => addToCart(prod)}>Add to cart</button>
         </div>
