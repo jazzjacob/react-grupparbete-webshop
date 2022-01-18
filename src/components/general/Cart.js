@@ -54,7 +54,7 @@ const CartProdstyling ={
               : "0"}{" "}
             kr
           </p>
-          <button onClick={() => setCartVisible(false)}>Hide Cart</button>
+          
         </div>
       )}
       {!isCart && (
