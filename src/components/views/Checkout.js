@@ -18,3 +18,4 @@ const Checkout = () => {
 };
 
 export default Checkout;
+// Erik
