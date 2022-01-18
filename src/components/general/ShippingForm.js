@@ -2,10 +2,14 @@ import { UserContext } from '../../context/UserContext';
 import { useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import userInfoService from '../../services/userInfoService';
+import { CartContext } from '../../context/CartContext';
+import useRemoveArrayDuplicates from '../../hooks/useRemoveArrayDuplicates';
 
 const ShippingForm = () => {
   
   const currentUser = userInfoService;
+  const { cart } = useContext(CartContext);
+  const filteredCart = useRemoveArrayDuplicates(cart);
 
   const [orderMade, setOrderMade] = useState(false);
   const { loggedIn } = useContext(UserContext);
@@ -19,7 +23,6 @@ const ShippingForm = () => {
   });
 
   const navigate = useNavigate();
-
 
   const formStyle = {
     display: 'flex',
@@ -40,6 +43,7 @@ const ShippingForm = () => {
 
   const makeOrder = (e) => {
     e.preventDefault();
+    shippingInfo.products = filteredCart;
     alert(JSON.stringify(shippingInfo));
     setOrderMade(true);
   }
@@ -47,7 +51,6 @@ const ShippingForm = () => {
   const handleInput = (e) => {
     setShippingInfo({...shippingInfo, [e.target.name]: e.target.value});
   }
-  console.log(shippingInfo);
   
 
   return (
