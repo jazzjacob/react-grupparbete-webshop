@@ -3,6 +3,8 @@ import { useContext } from 'react';
 
 const LoginForm = () => {
 
+  // NEW LOGGIN FORM
+
   const { setLoggedIn, setSkippedLogin } = useContext(UserContext);
 
   const skipLoginButtonStyle = {
