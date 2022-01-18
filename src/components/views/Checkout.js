@@ -3,6 +3,7 @@ import LoginForm from '../general/LoginForm';
 import { useState, useContext } from 'react';
 import { UserContext } from '../../context/UserContext';
 import Cart from '../general/Cart';
+import { Link } from 'react-router-dom';
 
 const Checkout = () => {
 
@@ -19,6 +20,7 @@ const Checkout = () => {
   return (
     <>
       <Cart/>
+        <Link to="/">Return to Shop</Link>
       <h1>This is the Checkout page</h1>
       <h3>Här nånstans borde varukorg synas</h3>
       {loggedIn || skippedLogin ? <ShippingForm /> : <LoginForm />}
