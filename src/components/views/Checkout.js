@@ -19,10 +19,9 @@ const Checkout = () => {
 
   return (
     <>
-      
+      <Cart/>
         <Link to="/">Return to Shop</Link>
       <h1>This is the Checkout page</h1>
-      <Cart/>
       {loggedIn || skippedLogin ? <ShippingForm /> : <LoginForm />}
     </>
   );
