@@ -1,4 +1,9 @@
-const products = [
+const productsService = [
+  {
+    id: 0,
+    name: 'Stefan Löven',
+    price: '666',
+  },
   {
     id: 1,
     name: 'Donald Trump',
@@ -28,6 +33,36 @@ const products = [
     id: 6,
     name: 'Xi Jinping',
     price: '5',
+  },
+  {
+    id: 7,
+    name: 'Benito Mussolini',
+    price: '1',
+  },
+  {
+    id: 8,
+    name: 'Winston Churchill',
+    price: '200',
+  },
+  {
+    id: 9,
+    name: 'Neville Chamberlain',
+    price: '15',
+  },
+  {
+    id: 10,
+    name: 'Harry S. Truman',
+    price: '15',
+  },
+  {
+    id: 11,
+    name: 'George Washington',
+    price: '80',
+  },
+  {
+    id: 12,
+    name: 'Queen Elizabeth II',
+    price: '5000',
   },
 ];
 
