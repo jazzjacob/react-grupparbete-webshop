@@ -1,11 +1,16 @@
 import Product from './Product';
 
 const ProductList = () => {
+  const productListStyle = {
+    display: 'flex',
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+  }
+  
   return (
-    <>
-      <h3>This is the product list</h3>
+    <div style={productListStyle}>
       <Product />
-    </>
+    </div>
   );
 }
 
