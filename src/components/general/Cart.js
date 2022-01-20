@@ -5,7 +5,7 @@ import useRemoveArrayDuplicates from "../../hooks/useRemoveArrayDuplicates.js";
 const Cart = (props) =>  {
     const { isCart = true } = props;
 
-    const { cart, setCart, setCartVisible } = useContext(CartContext);
+    const { cart, setCart } = useContext(CartContext);
     const filteredCart = useRemoveArrayDuplicates(cart);
 
     const priceArray = cart.map((p) => p.price);
@@ -13,8 +13,9 @@ const Cart = (props) =>  {
     const removeProduct = (id) => {
     setCart([...cart].filter((prod) => prod.id !== id));
   };
-const CartProdstyling ={
-  border: "1px solid black",
+  
+const cartProdStyling = {
+    border: "1px solid black",
     textAlign: 'center',
     marginBottom: "5px",
     width: "200px"
@@ -31,10 +32,7 @@ const CartProdstyling ={
               filteredCart.map((prod) => (
                 <div
                   key={prod.id}>
-                  <p style={{border: "1px solid black",
-                            textAlign: 'center',
-                            marginBottom: "5px",
-                            width: "200px"}}>
+                  <p style={cartProdStyling}>
                     {prod.name} {prod.qty} st <br />
                     {prod.price * prod.qty} kr
                   <button  onClick={() => removeProduct(prod.id)}>
